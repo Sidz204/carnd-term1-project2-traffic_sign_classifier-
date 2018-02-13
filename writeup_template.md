@@ -1,8 +1,8 @@
 # **Traffic Sign Recognition** 
 
-## Writeup
+## Overview
 
-### You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
+### In this project, deep neural networks and convolutional neural networks are used to classify traffic signs. Specifically,we will train a model to classify traffic signs from the German Traffic Sign Dataset and later use this model to predict the sign in the images from web.
 
 ---
 
@@ -36,7 +36,7 @@ The goals / steps of this project are the following:
 
 #### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
 
-You're reading it! and here is a link to my [project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
+You're reading it! and here is a link to my [project code](https://github.com/Sidz204/carnd-term1-project2-traffic_sign_classifier-/blob/master/Traffic_Sign_Classifier.ipynb)
 
 ### Data Set Summary & Exploration
 
