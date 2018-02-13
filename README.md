@@ -1,2 +1,2 @@
-# carnd-term1-project2-traffic_sign_classifier-
-Traffic Sign Classifier Project  In this project, you will use what you've learned about deep neural networks and convolutional neural networks to classify traffic signs. Specifically, you'll train a model to classify traffic signs from the German Traffic Sign Dataset. 
+# Traffic Sign Classifier Project
+In this project, deep neural networks and convolutional neural networks are used to classify traffic signs. Specifically,we will train a model to classify traffic signs from the German Traffic Sign Dataset.
