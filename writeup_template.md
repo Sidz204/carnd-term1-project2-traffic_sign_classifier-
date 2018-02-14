@@ -106,9 +106,10 @@ My final model consisted of the following layers:
  
 
 
-#### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
+#### 3. Model training : 
 
-To train the model, I used an ....
+I used an Adam optimizer, batch size of 128 for training. I tried epochs for 50 ,60 ,80, 100 and found out that 80 gives best results. Learning rate was set to 0.001. Also, tried dropouts with keep probability of 0.5,0.7,0.9 but later found that model performs better without dropouts.
+
 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
