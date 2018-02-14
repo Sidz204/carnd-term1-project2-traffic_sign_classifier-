@@ -133,8 +133,11 @@ My final model results were:
 
 I found 10 German traffic sign images on the web. Here are five of them:
 
-![image1](/new_images/30km.jpg) ![image2](/new_images/child.jpg) ![image3](/new_images/img2.jpg) 
-![image4](/new_images/stop.jpg) ![image5](/new_images/rightoff.jpg)
+![image1](/new_images/30km.jpg) 
+![image2](/new_images/child.jpeg) 
+![image3](/new_images/img2.jpg) 
+![image4](/new_images/stop.jpg) 
+![image5](/new_images/rightoff.jpg)
 
 The second image might be difficult to classify because it was taken from a wrong angle so only a smaller part of sign is visible and sometimes human will not be able to predict it correctly at first look. Rest of the images gave accurate results.
 
