@@ -25,7 +25,7 @@ You're reading it! and here is a link to my [project code](https://github.com/Si
 
 ### Data Set Summary & Exploration
 
-#### 1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
+#### 1. Basic summary of the data set.
 
 I used the python and numpy libraries to calculate summary statistics of the traffic
 signs data set:
@@ -36,7 +36,7 @@ signs data set:
 * The shape of a traffic sign image is (32,32,3)
 * The number of unique classes/labels in the data set is 43
 
-#### 2. Include an exploratory visualization of the dataset.
+#### 2. Exploratory visualization of the dataset.
 
 Here is an exploratory visualization of the data set. It is a bar chart showing how the data is disributed across each class.
 
@@ -78,7 +78,8 @@ Here is an example of a traffic sign image before and after grayscaling & normal
  
 
 
-#### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
+#### 2. Description of Final model architecture
+
 
 My final model consisted of the following layers:
 
@@ -132,8 +133,8 @@ My final model results were:
 
 I found 10 German traffic sign images on the web. Here are five of them:
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+![image1](/new_images/30km.jpg) ![image2](/new_images/child.jpg) ![image3](/new_images/img2.jpg) 
+![image4](/new_images/stop.jpg) ![image5](/new_images/rightoff.jpg)
 
 The second image might be difficult to classify because it was taken from a wrong angle so only a smaller part of sign is visible and sometimes human will not be able to predict it correctly at first look. Rest of the images gave accurate results.
 
