@@ -134,24 +134,24 @@ My final model results were:
 I found 10 German traffic sign images on the web. Here are five of them:
 
 ![image1](/new_images/30km.jpg) 
-![image2](/new_images/child.jpeg) 
+![image2](/new_images/slippery.jpg) 
 ![image3](/new_images/img2.jpg) 
 ![image4](/new_images/stop.jpg) 
 ![image5](/new_images/rightoff.jpg)
 
-The second image might be difficult to classify because it was taken from a wrong angle so only a smaller part of sign is visible and sometimes human will not be able to predict it correctly at first look. Rest of the images gave accurate results.
+I resized each of these images into 32x32x3 image.The second image might be difficult to classify because it was taken from a wrong angle so only a smaller part of sign is visible and sometimes human will not be able to predict it correctly at first look. Rest of the images gave accurate results.
 
 #### 2. Model's predictions on the new traffic signs
 
-Here are the results of the prediction:
+Here are the results of the prediction of 5 images:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| 30km Speed limit     	| 30km Speed limit   							| 
+| Slippery road     	| Road narrows on right							|
+| No entry				| No entry  									|
+| Stop  	      		| Stop      					 				|
+| Right-off way			| Right-off way      							|
 
 
 The model was able to correctly guess 8 of the 10 traffic signs, which gives an accuracy of 80%.
@@ -160,15 +160,15 @@ The model was able to correctly guess 8 of the 10 traffic signs, which gives an 
 
 The code for the Top 5 softmax probabilities for each image is there in the Ipython notebook.
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+For the first image, the model is pretty sure that this is a stop sign (probability of 0.99), and the image does contain a stop sign. Similarly,other top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+| .99         			| 30km speed limit   				    		| 
+| .50     				| Road narrows on right 						|
+| .99					| No entry	    								|
+| 1.0	      			| Stop					        				|
+| 1.0				    | Right-off way      							|
 
 
 For the second image ... 
