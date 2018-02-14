@@ -139,7 +139,7 @@ I found 10 German traffic sign images on the web. Here are five of them:
 ![image4](/new_images/stop.jpg) 
 ![image5](/new_images/rightoff.jpg)
 
-I resized each of these images into 32x32x3 image.The second image might be difficult to classify because it was taken from a wrong angle so only a smaller part of sign is visible and sometimes human will not be able to predict it correctly at first look. Rest of the images gave accurate results.
+I resized each of these images into 32x32x3 image.The second image might be difficult to classify because it was taken from a wrong angle so only a smaller part of sign is visible and after resizing it to 32x32 image, it may be distorted.
 
 #### 2. Model's predictions on the new traffic signs
 
