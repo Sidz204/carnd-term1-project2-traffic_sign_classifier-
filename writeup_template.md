@@ -38,7 +38,8 @@ signs data set:
 
 #### 2. Include an exploratory visualization of the dataset.
 
-Here is an exploratory visualization of the data set. It is a bar chart showing how the data is disributed across each class before and after augmentation.
+Here is an exploratory visualization of the data set. It is a bar chart showing how the data is disributed across each class.
+
 ![visualization](/visualizations/index1.png)
 
 
@@ -48,20 +49,26 @@ Here is an exploratory visualization of the data set. It is a bar chart showing 
 
 1. Through exploratory visualization, I found out that some of classes has low image data which will not help the model to predict these signs as there was little training done on these datasets. Hence I found all the labels which has datasets count less than 500 and applied following augmentation techniques on such datasets:
     - Brightness
+    
     ![augmentation](/visualizations/aug1.png)
     
     - Rotation
+    
     ![augmentation](/visualizations/aug2.png)
     
     - Translation
+    
     ![augmentation](/visualizations/aug3.png)
     
     - Shear
+    
     ![augmentation](/visualizations/aug4.png)
     
 The difference between the original data set and the augmented data can be shown with the following graphs:
+
 ![visualization](/visualizations/index1.png)
 ![visualization](/visualizations/index2.png)
+
 
 2. Grayscaling and normalization:
 Later, I grayscaled the image data using weights(grayconver= np.array([[0.2989],[0.5870],[0.1140]])) as there is no need of colour to identify signs. Later, I normalize it using x=(x-128)/128 so all the data fall within equal mean and unit covariance.
