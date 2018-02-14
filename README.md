@@ -7,6 +7,7 @@ In this project, deep neural networks and convolutional neural networks are used
 3. Project report : contains brief write up explaining the solution and approach to it.
 4. signnames.csv file : contains classid to description mapping of traffic signs that we may need for verifying.
 5. new_images : folder having images from web that I used for testing
+6. visualizations : folder containing visual images at each steps.
 
 ### Instruction for running the code:
 - while running on AWS instance please activate carnd-term1 environment and in that run "pip install opencv-python" if import cv2 gives error
