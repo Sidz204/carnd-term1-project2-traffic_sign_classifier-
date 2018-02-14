@@ -171,6 +171,3 @@ For the first image, the model is pretty sure that this is a stop sign (probabil
 | 1.0				    | Right-off way      							|
 
 
-For the second image ... 
-
-
