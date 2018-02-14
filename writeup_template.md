@@ -17,17 +17,6 @@ The goals / steps of this project are the following:
 * Summarize the results with a written report
 
 
-[//]: # (Image References)
-
-[image1]: ./examples/visualization.jpg "Visualization"
-[image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
-
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
@@ -50,8 +39,7 @@ signs data set:
 #### 2. Include an exploratory visualization of the dataset.
 
 Here is an exploratory visualization of the data set. It is a bar chart showing how the data is disributed across each class before and after augmentation.
-
-![alt text][image1]
+![visualization](/visualizations/index1.png)
 
 
 ### Design and Test a Model Architecture
@@ -60,27 +48,26 @@ Here is an exploratory visualization of the data set. It is a bar chart showing 
 
 1. Through exploratory visualization, I found out that some of classes has low image data which will not help the model to predict these signs as there was little training done on these datasets. Hence I found all the labels which has datasets count less than 500 and applied following augmentation techniques on such datasets:
     - Brightness
-    ![alt text][image2]
+    ![augmentation](/visualizations/aug1.png)
     
     - Rotation
-    ![alt text][image3]
+    ![augmentation](/visualizations/aug2.png)
     
     - Translation
-    ![alt text][image4]
+    ![augmentation](/visualizations/aug3.png)
     
     - Shear
-    ![alt text][image5]
+    ![augmentation](/visualizations/aug4.png)
     
 The difference between the original data set and the augmented data can be shown with the following graphs:
-![alt text][image6]
-![alt text][image7]
+![visualization](/visualizations/index1.png)
+![visualization](/visualizations/index2.png)
 
 2. Grayscaling and normalization:
 Later, I grayscaled the image data using weights(grayconver= np.array([[0.2989],[0.5870],[0.1140]])) as there is no need of colour to identify signs. Later, I normalize it using x=(x-128)/128 so all the data fall within equal mean and unit covariance.
 Here is an example of a traffic sign image before and after grayscaling & normalizing.
 
-![alt text][image8]
-
+![visualization](/visualizations/grayscale.png)
  
 
 
@@ -111,38 +98,39 @@ My final model consisted of the following layers:
 I used an Adam optimizer, batch size of 128 for training. I tried epochs for 50 ,60 ,80, 100 and found out that 80 gives best results. Learning rate was set to 0.001. Also, tried dropouts with keep probability of 0.5,0.7,0.9 but later found that model performs better without dropouts.
 
 
-#### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
+#### 4. Architecture selection and Iterative approach
+
+Architecture chosen:
+I choose LeNet architecture as it has been widely used for recognizing handwritten digits(MNIST data) and gives good accuracy with decent amount of computation power. I think it should give good accuracy for traffic sign recognition with some modifications.
+
+
+Iterative approach:
+- First I tried LeNet architecture on rgb inputs without normalization, epochs 10, batchsize 128, maxpooling and RELU activation function. I got validation accuracy of 89%.
+
+- Later I just changed the epochs to 60 and grayscaled (single channel) and normalized input data. Accuracy increased to 95%.But while testing on new images , images that fall under the category/label which has less training data gave wrong results.
+
+- This time I augmented the data with labels which has low data count. I applied rotation, translation, brightness and shear techniques on each image data. Also added dropouts with keep probability of 0.5. I got accuracy of 90%.
+
+- Later, I tried increasing epochs to 80 and 100 and removing droputs. Then I noticed it gives good results in 80 itself. I got a accuracy of 94.8% 
+
 
 My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
-
-If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
-
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
- 
+* validation set accuracy of 94.8%
+* test set accuracy of 92.5%
+* accuracy on new images : 80% (8 out of 10 images correctly predicted)
 
 ### Test a Model on New Images
 
-#### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+#### 1. German traffic signs images found on the web
 
-Here are five German traffic signs that I found on the web:
+I found 10 German traffic sign images on the web. Here are five of them:
 
 ![alt text][image4] ![alt text][image5] ![alt text][image6] 
 ![alt text][image7] ![alt text][image8]
 
-The first image might be difficult to classify because ...
+The second image might be difficult to classify because it was taken from a wrong angle so only a smaller part of sign is visible and sometimes human will not be able to predict it correctly at first look. Rest of the images gave accurate results.
 
-#### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
+#### 2. Model's predictions on the new traffic signs
 
 Here are the results of the prediction:
 
@@ -155,11 +143,11 @@ Here are the results of the prediction:
 | Slippery Road			| Slippery Road      							|
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 8 of the 10 traffic signs, which gives an accuracy of 80%.
 
-#### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
+#### 3. Top 5 softmax probabilities for each image along with the sign type of each probability.
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+The code for the Top 5 softmax probabilities for each image is there in the Ipython notebook.
 
 For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
 
@@ -173,8 +161,5 @@ For the first image, the model is relatively sure that this is a stop sign (prob
 
 
 For the second image ... 
-
-### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
-#### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
 
 
