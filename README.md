@@ -1,5 +1,5 @@
 # Traffic Sign Classifier Project
-In this project, deep neural networks and convolutional neural networks are used to classify traffic signs. Specifically,we will train a model to classify traffic signs from the German Traffic Sign Dataset.
+In this project, deep neural networks and convolutional neural networks are used to classify traffic signs. Specifically,we will train a model to classify traffic signs from the German Traffic Sign Dataset.A good resource can be found here [Link](https://medium.com/@ckyrkou/udacity-sdc-nanodegree-term-1-project-2-traffic-sign-classifier-8d8a30e735b8).
 
 ### Project Files
 1. Jupyter Notebook: a IPython file containing project code.
